@@ -2,7 +2,9 @@
 #include <string>
 using namespace std;
 
-struct Node {
-    string data;
-    Node* next;
+class Node
+{
+public:
+    int noMhs;
+    Node *next;
 };
