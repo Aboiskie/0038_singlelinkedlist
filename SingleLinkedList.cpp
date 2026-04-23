@@ -24,8 +24,8 @@ public:
         cout << "Masukkan NIM: ";
         cin >> nim;
 
-        Node *newNode = new Node();
-        newNode->noMhs = nim;
+        Node *nodeBaru = new Node();
+        nodeBaru->noMhs = nim;
 
         if (START == NULL || nim <= START->noMhs)
         {
@@ -53,6 +53,7 @@ public:
         previous = current;
         current = current->next;
     }
+    
     nodeBaru->next = current;
     previous->next = nodeBaru;
 
