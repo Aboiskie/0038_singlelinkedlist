@@ -21,5 +21,39 @@ public:
     void addNode()
     {
         int nim;
-        
+        cout << "Masukkan NIM: ";
+        cin >> nim;
+
+        Node *newNode = new Node();
+        newNode->noMhs = nim;
+
+        if (START == NULL || nim <= START->noMhs)
+        {
+            if (START != NULL && nim == START->noMhs)
+            {
+                cout << "\nDuplikasi noMhs tidak diijinkan\n";
+                return;
+            }
+            
+            nodeBaru->next = START;
+            START = nodeBaru;
+            return;
+    }
+
+    Node *previous = START;
+    Node *current = START;
+    
+    while (current !=NULL && nim >= current->noMhs)
+    {
+        if (nim == current->noMhs)
+        {
+            cout << "\nDuplikasi noMhs tidak diijinkan\n";
+            return;
+        }
+        previous = current;
+        current = current->next;
+    }
+    nodeBaru->next = current;
+    previous->next = nodeBaru;
+
     }
